@@ -1,14 +1,16 @@
 import java.util.Scanner;
 
 public class A1Autograder {
+    private Scanner input;
+    private String answer;
 
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        String fileName = "";
-
-        System.out.println("Enter student's filename:");
-        fileName = input.nextLine();
-
-
+    public A1Autograder (){
+        this.input = new Scanner(System.in);
     }
+
+    public void runGrader(){
+        System.out.println("Please open the student's file and ensure that it is named in the following fashion:\nLastNameFirstNameA1.c");
+    }
+
+
 }

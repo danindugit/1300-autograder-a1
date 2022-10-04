@@ -8,6 +8,8 @@ public class A1Autograder {
     private Scanner input;
     private String answer;
     private String fileName;
+    private float marksAchieved;
+    private final int totalDenominator = 50;
 
     public A1Autograder (){
         this.input = new Scanner(System.in);
@@ -19,25 +21,7 @@ public class A1Autograder {
         this.fileName = this.input.nextLine();
 
         System.out.println("\nOutput of gcc compilation:\n");
-        CompileCprog(fileName);
-    }
-
-    public static void CompileCprog(String filename){
-        File dir = new File(".");
-        try {
-            String exeName = filename.substring(0, filename.length() - 2);
-            Process p = Runtime.getRuntime().exec("gcc -std=c99 -Wall " + filename, null, dir);
-//            p = Runtime.getRuntime().exec("./a.out", null, dir);
-            // Process p = Runtime.getRuntime().exec("ls", null, dir);
-            BufferedReader in = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-            String line = null;
-            while ((line = in.readLine()) != null) {
-                // System.out.println("makes it to the compiler");
-                System.out.println("\u001B[31m" + line + "\u001B[0m");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Check.CompileCprog(fileName);
     }
 
 

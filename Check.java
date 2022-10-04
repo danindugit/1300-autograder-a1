@@ -60,4 +60,16 @@ public class Check {
     public void setAddition(float addition) {
         this.addition = addition;
     }
+
+    public void setDeduction(float deduction) {
+        this.deduction = deduction;
+    }
+
+    public float getDeduction() {
+        return deduction;
+    }
+
+    public float getAddition() {
+        return addition;
+    }
 }

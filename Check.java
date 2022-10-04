@@ -11,21 +11,25 @@ public class Check {
     private float deduction;
     private float addition;
     private Scanner input = new Scanner(System.in);
+    private char checkType;
 
-    public Check(String prompt, String[] answers) {
+
+    public Check(String prompt, String[] answers, char checkType) {
         this.prompt = prompt;
         this.answers = answers;
         this.addition = 0;
         this.deduction = 0;
         this.answerInput = "";
+        this.checkType = checkType;
     }
 
-    public Check(String prompt, String[] answers, float deduction, float addition) {
+    public Check(String prompt, String[] answers, float deduction, float addition, char checkType) {
         this.prompt = prompt;
         this.answers = answers;
         this.deduction = deduction;
         this.addition = addition;
         this.answerInput = "";
+        this.checkType = checkType;
     }
 
     public static void CompileCprog(String filename){

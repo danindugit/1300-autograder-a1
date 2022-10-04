@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class A1Autograder {
     private Scanner input;
     private String answer;
-    private String fileName;
+    private static String fileName;
     private float marksAchieved;
     private final int totalDenominator = 50;
 
@@ -24,5 +24,7 @@ public class A1Autograder {
         Check.CompileCprog(fileName);
     }
 
-
+    public static String getFileName() {
+        return fileName;
+    }
 }

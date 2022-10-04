@@ -67,6 +67,12 @@ public class Check {
         answerInput = input.nextLine();
     }
 
+    public void handleAnswer(){
+        if(this.answerInput.equalsIgnoreCase("c")){
+            this.CompileCprog(A1Autograder.getFileName());
+        }
+    }
+
     public void setAddition(float addition) {
         this.addition = addition;
     }

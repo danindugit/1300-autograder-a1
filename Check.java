@@ -2,18 +2,22 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class Check {
     private String prompt;
     private String[] answers;
+    private String answerInput;
     private float deduction;
     private float addition;
+    private Scanner input = new Scanner(System.in);
 
     public Check(String prompt, String[] answers) {
         this.prompt = prompt;
         this.answers = answers;
         this.addition = 0;
         this.deduction = 0;
+        this.answerInput = "";
     }
 
     public Check(String prompt, String[] answers, float deduction, float addition) {
@@ -21,6 +25,7 @@ public class Check {
         this.answers = answers;
         this.deduction = deduction;
         this.addition = addition;
+        this.answerInput = "";
     }
 
     public static void CompileCprog(String filename){
@@ -41,13 +46,13 @@ public class Check {
         }
     }
 
-    public String formatAnswers (String[] answers){
+    public String formatAnswers (){
         String formattedAnswers = "(";
 
-        for (int i = 0; i < answers.length; i++) {
-            formattedAnswers = formattedAnswers + answers[i];
+        for (int i = 0; i < this.answers.length; i++) {
+            formattedAnswers = formattedAnswers + this.answers[i];
             //if we're not on the last answer, add a comma and a space
-            if(i != answers.length - 1) {
+            if(i != this.answers.length - 1) {
                 formattedAnswers = formattedAnswers + ", ";
             }
         }
@@ -55,6 +60,11 @@ public class Check {
         formattedAnswers += ")";
 
         return formattedAnswers;
+    }
+
+    public void displayPrompt(){
+        System.out.println(this.prompt + " " + this.formatAnswers());
+        answerInput = input.nextLine();
     }
 
     public void setAddition(float addition) {

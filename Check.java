@@ -13,6 +13,14 @@ public class Check {
     private Scanner input = new Scanner(System.in);
     private char checkType;
 
+    public Check() {
+        this.prompt = "";
+        this.answers = new String[0];
+        this.answerInput = "";
+        this.deduction = 0;
+        this.addition = 0;
+        this.checkType = 'n';
+    }
 
     public Check(String prompt, String[] answers, char checkType) {
         this.prompt = prompt;

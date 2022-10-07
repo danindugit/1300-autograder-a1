@@ -41,6 +41,10 @@ public class A1Autograder {
         return strCode;
     }
 
+    public void displayCode(String strCode){
+        System.out.println(strCode);
+    }
+
     public static String getFileName() {
         return fileName;
     }

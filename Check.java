@@ -76,12 +76,13 @@ public class Check {
 
     public void displayPrompt(){
         System.out.println(this.prompt + " " + this.formatAnswers());
+        System.out.println("To display the code, please enter c.");
         answerInput = input.nextLine();
     }
 
     public void handleAnswer(){
         if(this.answerInput.equalsIgnoreCase("c")){
-            this.CompileCprog(A1Autograder.getFileName());
+
         }
     }
 

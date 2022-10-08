@@ -55,7 +55,7 @@ public class Check {
                 System.out.println("\u001B[31m" + line + "\u001B[0m");
             }
             if(count == 0){
-                System.out.println("\u001b[32mThe program has successfully compiled without errors or warnings.\u001B[0m");
+                System.out.println("\u001b[32mThe program has successfully compiled without errors or warnings.\u001B[0m\n");
             }
         } catch (IOException e) {
             e.printStackTrace();

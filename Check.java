@@ -40,7 +40,12 @@ public class Check {
         this.checkType = checkType;
     }
 
-    public static void CompileCprog(String filename){
+    /**
+     *
+     * @param filename
+     * @return true if no gcc errors or warnings, false otherwise
+     */
+    public static boolean CompileCprog(String filename){
         int count = 0; //counter for number of lines the error output has
         File dir = new File(".");
         try {
@@ -56,10 +61,13 @@ public class Check {
             }
             if(count == 0){
                 System.out.println("\u001b[32mThe program has successfully compiled without errors or warnings.\u001B[0m\n");
+                return true;
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        return false;
     }
 
     public String formatAnswers (){

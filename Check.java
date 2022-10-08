@@ -41,6 +41,7 @@ public class Check {
     }
 
     public static void CompileCprog(String filename){
+        int count = 0; //counter for number of lines the error output has
         File dir = new File(".");
         try {
             String exeName = filename.substring(0, filename.length() - 2);
@@ -50,8 +51,11 @@ public class Check {
             BufferedReader in = new BufferedReader(new InputStreamReader(p.getErrorStream()));
             String line = null;
             while ((line = in.readLine()) != null) {
-                // System.out.println("makes it to the compiler");
+                count++;
                 System.out.println("\u001B[31m" + line + "\u001B[0m");
+            }
+            if(count == 0){
+                System.out.println("\u001b[32mThe program has successfully compiled without errors or warnings.\u001B[0m");
             }
         } catch (IOException e) {
             e.printStackTrace();

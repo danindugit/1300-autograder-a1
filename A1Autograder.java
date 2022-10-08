@@ -30,6 +30,7 @@ public class A1Autograder {
             if(newCheck.getAnswerInput().equalsIgnoreCase("y")){
                 this.setMarksAchieved(0);
                 this.displayGrade();
+                return;
             }
         }
 
@@ -62,7 +63,7 @@ public class A1Autograder {
     }
 
     public void displayGrade(){
-        System.out.println("This student's final grade is " + marksAchieved + "/" + this.totalDenominator);
+        System.out.println("\n\n\u001b[34mThis student's final grade is " + marksAchieved + "/" + this.totalDenominator + "\u001b[0m");
     }
 
     public static String getFileName() {

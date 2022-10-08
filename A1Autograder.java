@@ -34,6 +34,8 @@ public class A1Autograder {
             }
         }
 
+        System.out.println("Here is the student's code");
+        System.out.println("***************");
         strCode = this.readCode();
         displayCode(strCode);
     }

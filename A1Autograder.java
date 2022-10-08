@@ -46,7 +46,7 @@ public class A1Autograder {
         return strCode;
     }
 
-    public void displayCode(String strCode){
+    public static void displayCode(String strCode){
         System.out.println("\u001b[35m" + strCode + "\u001b[0m");
     }
 

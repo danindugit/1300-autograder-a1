@@ -80,9 +80,9 @@ public class Check {
         answerInput = input.nextLine();
     }
 
-    public void handleAnswer(){
+    public void handleAnswer(String strCode){
         if(this.answerInput.equalsIgnoreCase("c")){
-
+            A1Autograder.displayCode(strCode);
         }
     }
 

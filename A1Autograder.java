@@ -14,12 +14,17 @@ public class A1Autograder {
     }
 
     public void runGrader(){
+        String strCode;
+
         System.out.println("Please open the student's file and ensure that it is named in the following fashion:\nLastNameFirstNameA1.c");
         System.out.println("Please enter the file name:");
         this.fileName = this.input.nextLine();
 
         System.out.println("\nOutput of gcc compilation:\n");
         Check.CompileCprog(fileName);
+
+        strCode = this.readCode();
+        displayCode(strCode);
     }
 
     public String readCode() {
@@ -42,7 +47,7 @@ public class A1Autograder {
     }
 
     public void displayCode(String strCode){
-        System.out.println(strCode);
+        System.out.println("\u001b[35m" + strCode + "\u001b[0m");
     }
 
     public static String getFileName() {

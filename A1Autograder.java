@@ -29,7 +29,7 @@ public class A1Autograder {
             newCheck.displayPrompt();
             if(newCheck.getAnswerInput().equalsIgnoreCase("y")){
                 this.setMarksAchieved(0);
-
+                this.displayGrade();
             }
         }
 
@@ -58,6 +58,7 @@ public class A1Autograder {
 
     public static void displayCode(String strCode){
         System.out.println("\u001b[35m" + strCode + "\u001b[0m");
+        System.exit(0);
     }
 
     public void displayGrade(){

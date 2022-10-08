@@ -113,4 +113,8 @@ public class Check {
     public float getAddition() {
         return addition;
     }
+
+    public String getAnswerInput() {
+        return answerInput;
+    }
 }

@@ -8,7 +8,6 @@ public class Check {
     private String prompt;
     private String[] answers;
     private String answerInput;
-    private float deduction;
     private float addition;
     private Scanner input = new Scanner(System.in);
     private char checkType;
@@ -17,7 +16,6 @@ public class Check {
         this.prompt = "";
         this.answers = new String[0];
         this.answerInput = "";
-        this.deduction = 0;
         this.addition = 0;
         this.checkType = 'n';
     }
@@ -26,15 +24,13 @@ public class Check {
         this.prompt = prompt;
         this.answers = answers;
         this.addition = 0;
-        this.deduction = 0;
         this.answerInput = "";
         this.checkType = checkType;
     }
 
-    public Check(String prompt, String[] answers, float deduction, float addition, char checkType) {
+    public Check(String prompt, String[] answers, float addition, char checkType) {
         this.prompt = prompt;
         this.answers = answers;
-        this.deduction = deduction;
         this.addition = addition;
         this.answerInput = "";
         this.checkType = checkType;
@@ -100,14 +96,6 @@ public class Check {
 
     public void setAddition(float addition) {
         this.addition = addition;
-    }
-
-    public void setDeduction(float deduction) {
-        this.deduction = deduction;
-    }
-
-    public float getDeduction() {
-        return deduction;
     }
 
     public float getAddition() {

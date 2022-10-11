@@ -5,7 +5,7 @@ public class A1Autograder {
     private Scanner input;
     private String answer;
     private static String fileName;
-    private float marksAchieved;
+    private static float marksAchieved;
     private final int totalDenominator = 50;
     private File code;
 
@@ -72,11 +72,11 @@ public class A1Autograder {
         return fileName;
     }
 
-    public float getMarksAchieved() {
+    public static float getMarksAchieved() {
         return marksAchieved;
     }
 
     public void setMarksAchieved(float marksAchieved) {
-        this.marksAchieved = marksAchieved;
+        marksAchieved = marksAchieved;
     }
 }

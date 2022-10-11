@@ -27,8 +27,8 @@ public class A1Autograder {
             //there are gcc errors/warnings
             newCheck = new Check("Are there any gcc errors?", yesNo, 'i');
             newCheck.displayPrompt();
-            if(newCheck.getAnswerInput().equalsIgnoreCase("y")){
-                this.setMarksAchieved(0);
+            if(!newCheck.implementMarks()){
+                //end program if implementMarks returns false
                 this.displayGrade();
                 return;
             }
@@ -76,7 +76,7 @@ public class A1Autograder {
         return marksAchieved;
     }
 
-    public void setMarksAchieved(float marksAchieved) {
+    public static void setMarksAchieved(float marksAchieved) {
         marksAchieved = marksAchieved;
     }
 }

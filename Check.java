@@ -94,6 +94,20 @@ public class Check {
         }
     }
 
+    /**
+     * returns false if the program should end, true otherwise
+     * @return
+     */
+    public boolean implementMarks(){
+        if(this.checkType == 'i'){
+            if(this.answerInput.equalsIgnoreCase("y")){
+                A1Autograder.setMarksAchieved(0);
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void setAddition(float addition) {
         this.addition = addition;
     }

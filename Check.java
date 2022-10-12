@@ -72,6 +72,20 @@ public class Check {
     }
 
     /**
+     * answer as decution constructor
+     * @param prompt
+     * @param checkType
+     */
+    public Check(String prompt, char checkType) {
+        this.prompt = prompt;
+        this.answers = new String[1];
+        answers[0] = "numerical";
+        this.checkType = checkType;
+        this.addition = 0;
+        this.denominator = 1;
+    }
+
+    /**
      *
      * @param filename
      * @return true if no gcc errors or warnings, false otherwise
@@ -142,11 +156,15 @@ public class Check {
         }
         else if(this.checkType == 'd'){
             if(this.answerInput.equalsIgnoreCase("y")){
-                System.out.println("Before:" + A1Autograder.getMarksAchieved());
-                System.out.println(this.addition);
+//                System.out.println("Before:" + A1Autograder.getMarksAchieved());
+//                System.out.println(this.addition);
                 A1Autograder.setMarksAchieved(A1Autograder.getMarksAchieved() + this.addition);
-                System.out.println("After:" + A1Autograder.getMarksAchieved());
+//                System.out.println("After:" + A1Autograder.getMarksAchieved());
             }
+        }
+        else if(this.checkType == 'a'){
+            this.addition = Double.parseDouble(this.answerInput);
+            A1Autograder.setMarksAchieved(A1Autograder.getMarksAchieved() - this.addition);
         }
         else {
             //checktype is n

@@ -35,7 +35,7 @@ public class A1Autograder {
         //gcc check
         System.out.println("\nOutput of gcc compilation:\n");
         if(!(Check.CompileCprog(fileName))){
-            //there are gcc errors/warnings
+            //gcc error check
             newCheck = new Check("Are there any gcc errors?", yesNo, 'i');
             newCheck.displayPrompt();
             if(!newCheck.implementMarks()){
@@ -43,6 +43,11 @@ public class A1Autograder {
                 this.displayGrade();
                 return;
             }
+
+            //gcc warning check
+            newCheck = new Check("Enter the number of unique gcc warnings there are:", 'a');
+            newCheck.displayPrompt();
+            newCheck.implementMarks();
         }
 
         System.out.println("Here is the student's code");
@@ -51,10 +56,10 @@ public class A1Autograder {
         displayCode(strCode);
 
         //program end
-        if(getMarksAchieved() < 0){
+//        if(getMarksAchieved() < 0){
             //if the mark total is less than 0, make it 0
-            setMarksAchieved(0);
-        }
+//            setMarksAchieved(0);
+//        }
         displayGrade();
     }
 

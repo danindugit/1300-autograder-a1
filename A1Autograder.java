@@ -37,12 +37,7 @@ public class A1Autograder {
         if(!(Check.CompileCprog(fileName))){
             //gcc error check
             newCheck = new Check("Are there any gcc errors?", yesNo, 'i');
-            newCheck.displayPrompt();
-            if(!newCheck.implementMarks()){
-                //end program if implementMarks returns false
-                this.displayGrade();
-                return;
-            }
+            this.handleInstantZeroCheck(newCheck);
 
             //gcc warning check
             newCheck = new Check("Enter the number of unique gcc warnings there are:", 'a');
@@ -54,6 +49,15 @@ public class A1Autograder {
         System.out.println("***************");
         strCode = this.readCode();
         displayCode(strCode);
+
+        //global variable check
+        newCheck = new Check("Does the program appear to use global variables?", yesNo, 'i');
+        this.handleInstantZeroCheck(newCheck);
+
+        //goto statement check
+        newCheck = new Check("Goes the program appear to use goto statements?", yesNo, 'i');
+        this.handleInstantZeroCheck(newCheck);
+
 
         //program end
 //        if(getMarksAchieved() < 0){
@@ -89,6 +93,15 @@ public class A1Autograder {
 
     public void displayGrade(){
         System.out.println("\n\n\u001b[34mThis student's final grade is " + marksAchieved + "/" + this.totalDenominator + "\u001b[0m");
+    }
+
+    public void handleInstantZeroCheck(Check newCheck){
+        newCheck.displayPrompt();
+        if(!newCheck.implementMarks()){
+            //end program if implementMarks returns false
+            this.displayGrade();
+            System.exit(0);
+        }
     }
 
     public static String getFileName() {

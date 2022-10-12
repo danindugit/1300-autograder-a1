@@ -18,6 +18,11 @@ public class A1Autograder {
         Check newCheck;
         String yesNo [] = {"y", "n"};
 
+        //late submission check
+        newCheck = new Check("Has the student submitted late?", yesNo, -2.5, 'd');
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
+
         //file name check
         System.out.println("Please open the student's file and ensure that it is named in the following fashion:\nLastNameFirstNameA1.c");
         newCheck = new Check("Is the file name incorrect?", yesNo, -2.5, 'd');
@@ -47,7 +52,7 @@ public class A1Autograder {
 
         //program end
 //        if(getMarksAchieved() < 0){
-            //if the mark total is less than 0, make it 0
+//            //if the mark total is less than 0, make it 0
 //            setMarksAchieved(0);
 //        }
         displayGrade();

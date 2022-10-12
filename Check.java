@@ -57,18 +57,19 @@ public class Check {
     }
 
     /**
-     * numerical w/ denominator constructor
+     * numerical addition constructor (n)
      * @param prompt
      * @param addition
      * @param checkType
      * @param denominator
      */
-    public Check(String prompt, double addition, char checkType, double denominator) {
+    public Check(String prompt, char checkType, String answerOptions) {
         this.prompt = prompt;
-        this.answers = new String[0];
-        this.addition = addition;
+        this.answers = new String[1];
+        answers[0] = answerOptions;
+        this.addition = 0;
         this.checkType = checkType;
-        this.denominator = denominator;
+        this.denominator = 1;
     }
 
     /**
@@ -168,6 +169,9 @@ public class Check {
         }
         else {
             //checktype is n
+            this.addition = Double.parseDouble(this.answerInput);
+            A1Autograder.setMarksAchieved(A1Autograder.getMarksAchieved() + this.addition);
+
         }
         return true;
     }

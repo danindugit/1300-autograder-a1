@@ -58,12 +58,22 @@ public class A1Autograder {
         newCheck = new Check("Goes the program appear to use goto statements?", yesNo, 'i');
         this.handleInstantZeroCheck(newCheck);
 
+        //header comment check
+        newCheck = new Check("Please assign a grade out of 3 for the student's header comment.", 'n', "0-3");
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
+
+        //header comment check
+        newCheck = new Check("Please assign a grade out of 2 for the student's variable naming.", 'n', "0-2");
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
+
 
         //program end
-//        if(getMarksAchieved() < 0){
+        if(getMarksAchieved() < 0){
             //if the mark total is less than 0, make it 0
-//            setMarksAchieved(0);
-//        }
+            setMarksAchieved(0);
+        }
         displayGrade();
     }
 

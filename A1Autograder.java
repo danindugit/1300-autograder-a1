@@ -51,10 +51,10 @@ public class A1Autograder {
         displayCode(strCode);
 
         //program end
-//        if(getMarksAchieved() < 0){
-//            //if the mark total is less than 0, make it 0
-//            setMarksAchieved(0);
-//        }
+        if(getMarksAchieved() < 0){
+            //if the mark total is less than 0, make it 0
+            setMarksAchieved(0);
+        }
         displayGrade();
     }
 

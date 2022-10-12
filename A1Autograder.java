@@ -63,8 +63,18 @@ public class A1Autograder {
         newCheck.displayPrompt();
         newCheck.implementMarks();
 
-        //header comment check
+        //variable naming check
         newCheck = new Check("Please assign a grade out of 2 for the student's variable naming.", 'n', "0-2");
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
+
+        //commenting check
+        newCheck = new Check("Please assign a grade out of 2 for the student's commenting.", 'n', "0-2");
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
+
+        //consistent spacing/readability check
+        newCheck = new Check("Please assign a grade out of 2 for the student's spacing/readability.", 'n', "0-2");
         newCheck.displayPrompt();
         newCheck.implementMarks();
 

@@ -8,7 +8,7 @@ public class Check {
     private String prompt;
     private String[] answers;
     private String answerInput;
-    private float addition;
+    private double addition;
     private Scanner input = new Scanner(System.in);
     private char checkType;
 
@@ -28,7 +28,7 @@ public class Check {
         this.checkType = checkType;
     }
 
-    public Check(String prompt, String[] answers, float addition, char checkType) {
+    public Check(String prompt, String[] answers, double addition, char checkType) {
         this.prompt = prompt;
         this.answers = answers;
         this.addition = addition;
@@ -88,11 +88,11 @@ public class Check {
         answerInput = input.nextLine();
     }
 
-    public void handleAnswer(String strCode){
-        if(this.answerInput.equalsIgnoreCase("c")){
-            A1Autograder.displayCode(strCode);
-        }
-    }
+//    public void handleAnswer(String strCode){
+//        if(this.answerInput.equalsIgnoreCase("c")){
+//            A1Autograder.displayCode(strCode);
+//        }
+//    }
 
     /**
      * returns false if the program should end, true otherwise
@@ -108,11 +108,11 @@ public class Check {
         return true;
     }
 
-    public void setAddition(float addition) {
+    public void setAddition(double addition) {
         this.addition = addition;
     }
 
-    public float getAddition() {
+    public double getAddition() {
         return addition;
     }
 

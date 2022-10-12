@@ -5,7 +5,7 @@ public class A1Autograder {
     private Scanner input;
     private String answer;
     private static String fileName;
-    private static float marksAchieved;
+    private static double marksAchieved;
     private final int totalDenominator = 50;
     private File code;
 
@@ -19,6 +19,7 @@ public class A1Autograder {
         String yesNo [] = {"y", "n"};
 
         System.out.println("Please open the student's file and ensure that it is named in the following fashion:\nLastNameFirstNameA1.c");
+        newCheck = new Check("Is the file name incorrect?", yesNo, -2.5, 'd');
         System.out.println("Please enter the file name:");
         this.fileName = this.input.nextLine();
 
@@ -72,7 +73,7 @@ public class A1Autograder {
         return fileName;
     }
 
-    public static float getMarksAchieved() {
+    public static double getMarksAchieved() {
         return marksAchieved;
     }
 

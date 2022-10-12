@@ -18,11 +18,16 @@ public class A1Autograder {
         Check newCheck;
         String yesNo [] = {"y", "n"};
 
+        //file name check
         System.out.println("Please open the student's file and ensure that it is named in the following fashion:\nLastNameFirstNameA1.c");
         newCheck = new Check("Is the file name incorrect?", yesNo, -2.5, 'd');
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
+
         System.out.println("Please enter the file name:");
         this.fileName = this.input.nextLine();
 
+        //gcc check
         System.out.println("\nOutput of gcc compilation:\n");
         if(!(Check.CompileCprog(fileName))){
             //there are gcc errors/warnings
@@ -39,6 +44,13 @@ public class A1Autograder {
         System.out.println("***************");
         strCode = this.readCode();
         displayCode(strCode);
+
+        //program end
+//        if(getMarksAchieved() < 0){
+            //if the mark total is less than 0, make it 0
+//            setMarksAchieved(0);
+//        }
+        displayGrade();
     }
 
     public String readCode() {
@@ -62,7 +74,7 @@ public class A1Autograder {
 
     public static void displayCode(String strCode){
         System.out.println("\u001b[35m" + strCode + "\u001b[0m");
-        System.exit(0);
+//        System.exit(0);
     }
 
     public void displayGrade(){
@@ -77,7 +89,7 @@ public class A1Autograder {
         return marksAchieved;
     }
 
-    public static void setMarksAchieved(float marksAchieved) {
-        marksAchieved = marksAchieved;
+    public static void setMarksAchieved(double marks) {
+        marksAchieved = marks;
     }
 }

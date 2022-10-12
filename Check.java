@@ -11,29 +11,64 @@ public class Check {
     private double addition;
     private Scanner input = new Scanner(System.in);
     private char checkType;
+    private double denominator;
 
+    /**
+     * default constructor
+     */
     public Check() {
         this.prompt = "";
         this.answers = new String[0];
         this.answerInput = "";
         this.addition = 0;
         this.checkType = 'n';
+        this.setDenominator(1);
     }
 
+    /**
+     * instant 0 constructor
+     * @param prompt
+     * @param answers
+     * @param checkType
+     */
     public Check(String prompt, String[] answers, char checkType) {
         this.prompt = prompt;
         this.answers = answers;
         this.addition = 0;
         this.answerInput = "";
         this.checkType = checkType;
+        this.setDenominator(1);
     }
 
+    /**
+     * specified deduction constructor
+     * @param prompt
+     * @param answers
+     * @param addition
+     * @param checkType
+     */
     public Check(String prompt, String[] answers, double addition, char checkType) {
         this.prompt = prompt;
         this.answers = answers;
         this.addition = addition;
         this.answerInput = "";
         this.checkType = checkType;
+        this.setDenominator(1);
+    }
+
+    /**
+     * numerical w/ denominator constructor
+     * @param prompt
+     * @param addition
+     * @param checkType
+     * @param denominator
+     */
+    public Check(String prompt, double addition, char checkType, double denominator) {
+        this.prompt = prompt;
+        this.answers = new String[0];
+        this.addition = addition;
+        this.checkType = checkType;
+        this.denominator = denominator;
     }
 
     /**
@@ -84,7 +119,7 @@ public class Check {
 
     public void displayPrompt(){
         System.out.println(this.prompt + " " + this.formatAnswers());
-        System.out.println("To display the code, please enter c.");
+//        System.out.println("To display the code, please enter c.");
         answerInput = input.nextLine();
     }
 
@@ -105,6 +140,17 @@ public class Check {
                 return false;
             }
         }
+        else if(this.checkType == 'd'){
+            if(this.answerInput.equalsIgnoreCase("y")){
+                System.out.println("Before:" + A1Autograder.getMarksAchieved());
+                System.out.println(this.addition);
+                A1Autograder.setMarksAchieved(A1Autograder.getMarksAchieved() + this.addition);
+                System.out.println("After:" + A1Autograder.getMarksAchieved());
+            }
+        }
+        else {
+            //checktype is n
+        }
         return true;
     }
 
@@ -118,5 +164,13 @@ public class Check {
 
     public String getAnswerInput() {
         return answerInput;
+    }
+
+    public double getDenominator() {
+        return denominator;
+    }
+
+    public void setDenominator(double denominator) {
+        this.denominator = denominator;
     }
 }

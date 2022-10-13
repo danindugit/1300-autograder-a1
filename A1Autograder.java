@@ -95,13 +95,48 @@ public class A1Autograder {
         newCheck = new Check("Were you able to successfully input all the required grades?", yesNo, 2, 'd');
         newCheck.displayPrompt();
         newCheck.implementMarks();
-
         //input check 2
-        newCheck = new Check("Were you asked if you wanted to continue to another student after each student's output?", yesNo, 2, 'd');
+        newCheck = new Check("Were you able to enter a 'y' or 'n' to continue to the next student?", yesNo, 2, 'd');
         newCheck.displayPrompt();
         newCheck.implementMarks();
 
+        //output check 1
+        newCheck = new Check("Did the program include the correct welcome message?", yesNo, 2, 'd');
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
+        //output check 2
+        newCheck = new Check("Did the program include the correct prompts for student grades?", yesNo, 2, 'd');
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
+        //output check 3
+        newCheck = new Check("If you entered 'y' for the continue to the next student, is the same prompts repeated for the next student?", yesNo, 1, 'd');
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
+        //output check 4
+        newCheck = new Check("If you entered 'n' for the continue to the next student, is the class average displayed?", yesNo, 1, 'd');
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
+        //expected output check
+        newCheck = new Check("Please assign a grade out of 8 for how well the student's output numbers matched the expected output for the test cases.", 'n', "0-8");
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
 
+        //program check 1
+        newCheck = new Check("Check 1\nWere assignment grades replaced by 0 if the MOSS output was 0?", yesNo, 3, 'd');
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
+        //program check 2
+        newCheck = new Check("Check 2\nIf all MOSS outputs were 0, was the student assigned a 0 as the final mark?", yesNo, 3, 'd');
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
+        //program check 3
+        newCheck = new Check("Check 3\nIf the survey response was 'y', was the lab exam weight transferred correctly?", yesNo, 3, 'd');
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
+        //program check 4
+        newCheck = new Check("Check 4\nDid the student get an F if the student got less than 25/50 ib the exams+quizzes total?", yesNo, 3, 'd');
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
 
         //program end
         if(getMarksAchieved() < 0){

@@ -86,6 +86,13 @@ public class A1Autograder {
         newCheck.displayPrompt();
         newCheck.implementMarks();
 
+        //if statement check
+        newCheck = new Check("Please assign a grade out of 6 for the student's use of if statements.", 'n', "0-6");
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
+
+
+
         //program end
         if(getMarksAchieved() < 0){
             //if the mark total is less than 0, make it 0

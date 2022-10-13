@@ -170,7 +170,7 @@ public class A1Autograder {
     }
 
     public void displayGrade(){
-        System.out.println("\n\n\u001b[34mThis student's final grade is " + marksAchieved + "/" + this.totalDenominator + "\u001b[0m");
+        System.out.println("\n\n\u001b[36mThis student's final grade is " + marksAchieved + "/" + this.totalDenominator + "\u001b[0m");
     }
 
     public void handleInstantZeroCheck(Check newCheck){

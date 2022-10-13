@@ -77,8 +77,9 @@ public class A1Autograder {
         newCheck.displayPrompt();
         newCheck.implementMarks();
 
-        System.out.println("It's time to run the program. In a new terminal, run the student's program. There should already be an 'a.out' file waiting for you. Use the test cases provided.\n" +
-                "After running the test cases, come back here and continue with the remaining checks.");
+        System.out.println("\n********It's time to run the program. In a new terminal, run the student's program. There should already be an 'a.out' file waiting for you. Use the test cases provided.\n" +
+                "After running the test cases, come back here and continue with the remaining checks.\n" +
+                "********");
 
         //loop check
         newCheck = new Check("Please assign a grade out of 6 for the student's use of loops.", 'n', "0-6");

@@ -91,7 +91,10 @@ public class A1Autograder {
         newCheck.displayPrompt();
         newCheck.implementMarks();
 
-
+        //input check 1
+        newCheck = new Check("Were you able to successfully input all the required grades?", yesNo, 2, 'd');
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
 
         //program end
         if(getMarksAchieved() < 0){

@@ -96,6 +96,13 @@ public class A1Autograder {
         newCheck.displayPrompt();
         newCheck.implementMarks();
 
+        //input check 2
+        newCheck = new Check("Were you asked if you wanted to continue to another student after each student's output?", yesNo, 2, 'd');
+        newCheck.displayPrompt();
+        newCheck.implementMarks();
+
+
+
         //program end
         if(getMarksAchieved() < 0){
             //if the mark total is less than 0, make it 0

@@ -26,7 +26,7 @@ public class Check {
     }
 
     /**
-     * instant 0 constructor
+     * instant 0 constructor (i)
      * @param prompt
      * @param answers
      * @param checkType
@@ -41,7 +41,7 @@ public class Check {
     }
 
     /**
-     * specified deduction constructor
+     * specified deduction constructor (d)
      * @param prompt
      * @param answers
      * @param addition
@@ -59,9 +59,8 @@ public class Check {
     /**
      * numerical addition constructor (n)
      * @param prompt
-     * @param addition
      * @param checkType
-     * @param denominator
+     * @param answerOptions
      */
     public Check(String prompt, char checkType, String answerOptions) {
         this.prompt = prompt;
@@ -157,10 +156,7 @@ public class Check {
         }
         else if(this.checkType == 'd'){
             if(this.answerInput.equalsIgnoreCase("y")){
-//                System.out.println("Before:" + A1Autograder.getMarksAchieved());
-//                System.out.println(this.addition);
                 A1Autograder.setMarksAchieved(A1Autograder.getMarksAchieved() + this.addition);
-//                System.out.println("After:" + A1Autograder.getMarksAchieved());
             }
         }
         else if(this.checkType == 'a'){

@@ -11,7 +11,6 @@ public class Check {
     private double addition;
     private Scanner input = new Scanner(System.in);
     private char checkType;
-    private double denominator;
 
     /**
      * default constructor
@@ -22,7 +21,6 @@ public class Check {
         this.answerInput = "";
         this.addition = 0;
         this.checkType = 'n';
-        this.setDenominator(1);
     }
 
     /**
@@ -37,7 +35,6 @@ public class Check {
         this.addition = 0;
         this.answerInput = "";
         this.checkType = checkType;
-        this.setDenominator(1);
     }
 
     /**
@@ -53,7 +50,6 @@ public class Check {
         this.addition = addition;
         this.answerInput = "";
         this.checkType = checkType;
-        this.setDenominator(1);
     }
 
     /**
@@ -68,7 +64,6 @@ public class Check {
         answers[0] = answerOptions;
         this.addition = 0;
         this.checkType = checkType;
-        this.denominator = 1;
     }
 
     /**
@@ -82,7 +77,6 @@ public class Check {
         answers[0] = "numerical";
         this.checkType = checkType;
         this.addition = 0;
-        this.denominator = 1;
     }
 
     /**
@@ -96,8 +90,6 @@ public class Check {
         try {
             String exeName = filename.substring(0, filename.length() - 2);
             Process p = Runtime.getRuntime().exec("gcc -std=c99 -Wall " + filename, null, dir);
-//            p = Runtime.getRuntime().exec("./a.out", null, dir);
-            // Process p = Runtime.getRuntime().exec("ls", null, dir);
             BufferedReader in = new BufferedReader(new InputStreamReader(p.getErrorStream()));
             String line = null;
             while ((line = in.readLine()) != null) {
@@ -133,15 +125,8 @@ public class Check {
 
     public void displayPrompt(){
         System.out.println(this.prompt + " " + this.formatAnswers());
-//        System.out.println("To display the code, please enter c.");
         answerInput = input.nextLine();
     }
-
-//    public void handleAnswer(String strCode){
-//        if(this.answerInput.equalsIgnoreCase("c")){
-//            A1Autograder.displayCode(strCode);
-//        }
-//    }
 
     /**
      * returns false if the program should end, true otherwise
@@ -172,23 +157,4 @@ public class Check {
         return true;
     }
 
-    public void setAddition(double addition) {
-        this.addition = addition;
-    }
-
-    public double getAddition() {
-        return addition;
-    }
-
-    public String getAnswerInput() {
-        return answerInput;
-    }
-
-    public double getDenominator() {
-        return denominator;
-    }
-
-    public void setDenominator(double denominator) {
-        this.denominator = denominator;
-    }
 }

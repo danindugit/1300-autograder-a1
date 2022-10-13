@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class A1Autograder {
     private Scanner input;
-    private String answer;
     private static String fileName;
     private static double marksAchieved;
     private final int totalDenominator = 50;
@@ -167,7 +166,6 @@ public class A1Autograder {
 
     public static void displayCode(String strCode){
         System.out.println("\u001b[35m" + strCode + "\u001b[0m");
-//        System.exit(0);
     }
 
     public void displayGrade(){
@@ -181,10 +179,6 @@ public class A1Autograder {
             this.displayGrade();
             System.exit(0);
         }
-    }
-
-    public static String getFileName() {
-        return fileName;
     }
 
     public static double getMarksAchieved() {
